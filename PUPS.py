@@ -10,7 +10,6 @@ class Player():
         self.rect.y = y # координати по висоті
         self.width = width # ширина
         self.height = height # висота
-    
     def move(self):
         keys = pygame.key.get_pressed()
         if keys [pygame.K_LEFT]:
@@ -42,15 +41,19 @@ class Player():
         if keys [pygame.K_UP]:
             self.rect.y -= 3
 
+pygame.mixer.music.load('image/sound1.mp3')
+pygame.mixer.music.play()
+
 window = pygame.display.set_mode((800, 750))
 pygame.display.set_caption("Гра з персонажем")
 
 # Колір фону
 bg_color = (255, 255, 255)
-player = Player(100, 100, 150, 100, 'image/NEYMAR.png')
-player2 = Player(300, 100, 150, 100, 'image/GOAT.png')
-player3 = Player(300, 300, 150, 100, 'image/SELFISH.png')
-player4 = Player(200, 300, 150, 100, 'image/BETTER_THAN_HOLLAND.png')
+player = Player(100, 100, 150, 100, 'image/neymar.jpg')
+player2 = Player(300, 100, 150, 100, 'image/messi.jpg')
+player3 = Player(300, 300, 150, 100, 'image/CR7.jpg')
+
+
 background_image = pygame.image.load('image/FIELD2.jpg')  # Замість 'background.jfif' вкажіть шлях до вашого зображення фону
 background_image = pygame.transform.scale(background_image, (800, 750)) # задання розмірів фонового зображення
 # Головний цикл гри
